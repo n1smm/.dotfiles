@@ -1,0 +1,15 @@
+@define-color bar-bg rgba(59,38,20, 0.6);
+
+@define-color main-bg #101419;
+@define-color main-bg-t rgba(12,20,25, 0.4);
+@define-color main-bg-alt rgba(1,10,10, 0.8);
+@define-color main-fg #93cee9;
+
+@define-color wb-act-bg #93cee9;
+@define-color wb-act-fg #1f2328;
+
+@define-color wb-hvr-bg #93cee9;
+@define-color wb-hvr-fg #1f2328;
+
+@define-color redish #552314;
+@define-color beigish #93672e;

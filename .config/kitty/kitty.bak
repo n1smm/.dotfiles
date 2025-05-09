@@ -1,0 +1,42 @@
+close_on_child_death yes
+scrollback_lines 4000
+tab_bar_edge bottom
+tab_bar_margin_width 0.0
+tab_bar_style fade
+shell zsh
+editor nvim
+allow_hyperlinks yes
+allow_cloning ask
+enable_audio_bell no
+
+# Automatically start the background change script
+allow_remote_control yes
+#initial_window_command ./kitty_change_bg.sh
+
+# Colors
+background #010a0a
+# background #ffffff
+foreground #93672e
+background_opacity 0.9
+selection_foreground #ffffff
+selection_background #4c566a
+
+# Set the background image
+#background_image /home/thiew/Pictures/animated_wallpapers/empty_bed.png
+#background_image_layout scaled
+background_image_alignment center
+background_image_opacity 0.2
+backgroundd_image_tint 0.5
+
+# Window padding
+padding_width 20
+padding_height 20
+
+# Cursor
+cursor_shape block
+cursor_blink yes
+cursor_color #ebcb8b
+
+kitty_mod ctrl+shift
+map kitty_mod+n launch --cwd=current --type=os-window
+

@@ -1,0 +1,7 @@
+-- for completion cmp plugin
+-- cmp.setup.filetype({ "sql" }, {
+-- 	sources = {
+-- 		{name = "vim-dadbod-completion"},
+-- 		{name = "buffer"},
+-- 	},
+-- })
