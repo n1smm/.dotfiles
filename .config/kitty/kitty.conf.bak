@@ -50,12 +50,15 @@ touch_scroll_multiplier 1.0
 unmap ctrl+shift+u
 unmap ctrl+shift+up
 unmap ctrl+shift+down
+# unmap crtl+shift+s
 
 map kitty_mod+u scroll_to_prompt -1
 map kitty_mod+d scroll_to_prompt +1
 map kitty_mod+up scroll_page_up
 map kitty_mod+down scroll_page_down
 
+#search
+# map ctrl+shift+s scrollback_search
 
 kitty_mod ctrl+shift
 map kitty_mod+n launch --cwd=current --type=os-window
@@ -72,6 +75,10 @@ map kitty_mod+] launch --location=hsplit --cwd=current
 map kitty_mod+1 kitten new_tab.py 1
 map kitty_mod+2 kitten new_tab.py 2
 map kitty_mod+3 kitten new_tab.py 3
+
+
+#quick switch to zoom layout - fullscreen
+map kitty_mod+` toggle_layout stack
 
 
 
@@ -101,6 +108,6 @@ map kitty_mod+l send_text all \x1b[B
 
 
 # BEGIN_KITTY_THEME
-# Aquarium-Theme
+# Light-Theme
 include current-theme.conf
 # END_KITTY_THEME

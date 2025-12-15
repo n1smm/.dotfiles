@@ -36,6 +36,7 @@ require'nvim-treesitter.configs'.setup {
 	  "json5",
 	  "nix",
 	  "ocaml",
+	  "solidity",
   },
   --config = function(_, opts)
 	  --require("nvim-treesitter.configs").setup(opts)

@@ -1,10 +1,13 @@
-require("CopilotChat").setup {
-  debug = true, -- Enable debugging
-  -- See Configuration section for rest
-}
+-- require("CopilotChat").setup {
+--   -- debug = true, -- Enable debugging
+--   -- See Configuration section for rest
+-- }
+
+vim.g.copilot_enabled = false
+
 vim.g.copilot_filetypes = {
 ['*'] = false,
-['javascript'] = true,
+['javascript'] = false,
 ['typescript'] = true,
 ['vue'] = true,
 ['lua'] = true,

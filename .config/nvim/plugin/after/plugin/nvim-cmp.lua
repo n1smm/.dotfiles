@@ -41,9 +41,15 @@ local cmp = require'cmp'
       { name = 'buffer' },
     })
   })
+  cmp.setup.filetype('solidity', {
+	  completion = {
+		  autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged },
+	  },
+  })
   require("luasnip.loaders.from_vscode").lazy_load()
   require('luasnip').filetype_extend("javascript", { "javascriptreact" })
   require('luasnip').filetype_extend("javascript", { "html" })
+  require'luasnip'.add_snippets('supercollider', require'scnvim.utils'.get_snippets())
 
   -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
   -- Set configuration for specific filetype.

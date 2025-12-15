@@ -26,5 +26,12 @@
         "updated_at": "2024-05-02T17:27:05.931926",
         "last_commit": "bc50d9f41d46b6813a5aeebddd15734dcdb9d8db",
         "last_commit_time": "2019-05-28T18:30:00"
+    },
+    "com.github.throwingshapes.executablelauncher": {
+        "id": "com.github.throwingshapes.executablelauncher",
+        "url": "https://github.com/throwingshapes/executablelauncher",
+        "updated_at": "2025-10-12T16:57:18.995929",
+        "last_commit": "56901a14dc25797bbdbb221cec3a4419bdec0a85",
+        "last_commit_time": "2025-07-17T20:18:59"
     }
 }

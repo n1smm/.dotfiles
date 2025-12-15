@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
 
   use '~/.config/nvim/newplug'
+  use '~/.config/nvim/todoIndex'
 
   use 'wbthomason/packer.nvim'
 
@@ -31,18 +32,22 @@ return require('packer').startup(function(use)
   }
 
   -- parser generator/library for syntax highlighting etc.
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use({
+	  'nvim-treesitter/nvim-treesitter',
+	  {run = ':TSUpdate'},
+	  requires = {'nvim-treesitter/playground'}
+  })
 
   -- lsp auto-configuration
   use {
 	  'williamboman/mason.nvim',
-	  commit = 'fc98833b6da5de5a9c5b1446ac541577059555be',
+	  -- commit = 'fc98833b6da5de5a9c5b1446ac541577059555be',
   }
   use {'williamboman/mason-lspconfig.nvim',
-  		commit = '1a31f824b9cd5bc6f342fc29e9a53b60d74af245',
+  		-- commit = '1a31f824b9cd5bc6f342fc29e9a53b60d74af245',
 	}
 
-
+  -- necessary for autocompletion and snippets
   use {'neovim/nvim-lspconfig'}
   use {'hrsh7th/nvim-cmp'}
   use {'hrsh7th/cmp-nvim-lsp'}
@@ -112,9 +117,10 @@ return require('packer').startup(function(use)
 
   --------- MISCELLANEOUS PLUGINS / coding environments ----------------
 
-  --copilot
+  ------ AI -------
+  ----copilot
   use ('github/copilot.vim')
-  --copilot chat
+  ----copilot chat
   use {
 		  "CopilotC-Nvim/CopilotChat.nvim",
 		  branch = "main",
@@ -128,18 +134,28 @@ return require('packer').startup(function(use)
 		  },
 		  -- See Commands section for default commands if you want to lazy load on them
   }
+  -- use({
+	  -- 'olimorris/codecompanion.nvim',
+	  -- tag = '^18.0.0',
+	  -- config = function()
+		  -- require('codecompanion').setup()
+	  -- end,
+	  -- requires = {
+		  -- 'nvim-lua/plenary.nvim',
+	  -- }
+  -- })
 
 	  --auto save
-  use({
-	  "Pocco81/auto-save.nvim",
-	  config = function()
-		  require("auto-save").setup {
-			  enabled = false,
-			  -- your config goes here
-			  -- or just leave it empty :)
-		  }
-	  end,
-  })
+  -- use({
+	  -- "Pocco81/auto-save.nvim",
+	  -- config = function()
+		  -- require("auto-save").setup {
+			  -- enabled = false,
+			  -- -- your config goes here
+			  -- -- or just leave it empty :)
+		  -- }
+	  -- end,
+  -- })
 
 
   --arduino environment
@@ -151,8 +167,11 @@ return require('packer').startup(function(use)
   -- use {'ChristianChiarulli/vim-solidity'}
 
 
-  --supercolider plug
-  use {'supercollider/scvim'}
+  --MUSIC
+  --supercolider vim plug
+  -- use {'supercollider/scvim'}
+  --supercolider nvim plug
+  use {'davidgranstrom/scnvim'}
   --tidalcycles
   use {'tidalcycles/vim-tidal'}
 
@@ -176,8 +195,8 @@ return require('packer').startup(function(use)
   use ('echasnovski/mini.icons')
   use ('prichrd/netrw.nvim')
 
-  use ('VonHeikemen/fine-cmdline.nvim')
-  use ('VonHeikemen/searchbox.nvim')
+  -- use ('VonHeikemen/fine-cmdline.nvim')
+  -- use ('VonHeikemen/searchbox.nvim')
   use {'stevearc/dressing.nvim'}
 
   --ansiesc support
@@ -186,13 +205,13 @@ return require('packer').startup(function(use)
   use { "savq/melange-nvim" }
 
   -- folding plugin
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  -- use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- colored parentheses
-  use ('luochen1990/rainbow')
+  -- use ('luochen1990/rainbow')
 
   --multiline editing
-  use('mg979/vim-visual-multi')
+  -- use('mg979/vim-visual-multi')
 
   --kitty terminal integration
   use {

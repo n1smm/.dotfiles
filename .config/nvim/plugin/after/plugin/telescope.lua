@@ -1,6 +1,8 @@
 local builtin = require('telescope.builtin')
 local fb_actions = require "telescope".extensions.file_browser.actions
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', function()
+	builtin.find_files({hidden = true})
+end, {})
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action, {})
@@ -8,8 +10,22 @@ vim.keymap.set('n', '<leader>fw',function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
 -- vim.keymap.set('n', '<leader>fn', ':lua require("telescope.builtin").lsp_workspace_symbols({symbols = {"function"}})<CR>', {noremap = true, silent = true})
+
+--telescope functions
+vim.api.nvim_create_user_command('TelescopeFunctions', function()
+  require('telescope.builtin').lsp_document_symbols{
+    symbols = { "function", "method" }
+  }
+end, {})
+vim.keymap.set("n", "<space>fn", ":TelescopeFunctions<CR>")
+
 -- telescope file browser
 vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
+
+--telscope todo index
+vim.keymap.set("n", "<space>fd", ":TodoIndexPicker<CR>")
+
+-- TODO: sth
 
 
 local ignore_filetypes_list = {
@@ -19,6 +35,7 @@ local ignore_filetypes_list = {
 	"%.mp3", "%.flac", "%.wav", "%.ogg", "%.m4a", "%.opus", "%.flv",
 	"%.mov", "%.wmv", "%.webm", "%.m4v", "%.mpg", "%.mpeg",
 	"%.m2ts", "%.vob", "%.iso", "%.bin", "node_modules", "%.exe",
+	".git",
 }
 
 
@@ -26,6 +43,7 @@ require("telescope").setup {
   extensions = {
     file_browser = {
       theme = "ivy",
+	  hidden = true,
       --hijack_netrw = true,
       mappings = {
         ["i"] = {

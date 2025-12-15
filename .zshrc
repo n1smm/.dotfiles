@@ -2,6 +2,11 @@ export PATH="/home/thiew/.local/bin:$PATH"
 export PATH="/home/thiew/.local/share/yabridge:$PATH"
 export PATH="/home/thiew/.platformio/penv/bin:$PATH"
 export PATH="/home/thiew/.cabal/bin:$PATH"
+export PATH="/home/thiew/git_apps/emsdk:$PATH"
+export PATH="/home/thiew/git_apps/emsdk/upstream/emscripten:$PATH"
+export PATH="$PATH:/home/thiew/.foundry/bin"
+export PG_OF_PATH="/home/thiew/git_apps/openFrameworks_gcc6_64"
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -32,6 +37,8 @@ alias valfull="valgrind --leak-check=full --track-origins=yes --show-leak-kinds=
 alias py="python"
 #android-studio
 alias android="~/.local/android-studio/bin/studio.sh"
+
+alias pdf="xdg-open"
 
 #check directory disk usage
 alias dir_space="du -h . -d 1 | sort -rh"
@@ -66,3 +73,5 @@ pokemon-colorscripts --no-title -s -r
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+fpath=(/home/thiew/.local/share/zsh-completion/completions $fpath) # avalanche completion
+rm -f ~/.zcompdump; compinit # avalanche completion

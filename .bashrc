@@ -124,3 +124,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/home/thiew/.cabal/bin:$PATH"
 
 [ -f "/home/thiew/.ghcup/env" ] && . "/home/thiew/.ghcup/env" # ghcup-env
+
+export PATH="$PATH:/home/thiew/.foundry/bin"
+
